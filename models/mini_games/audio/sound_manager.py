@@ -1,5 +1,5 @@
 import pygame
-import models.
+import models.mini_games.audio.sound_track
 
 class SoundManager:
     def __init__(self):
