@@ -2,6 +2,7 @@ import pygame
 from models.mini_games.audio.sound_manager import SoundManager
 from models.mini_games.audio.settings import Settings
 from models.mini_games.audio.audio_manager import AudioManager
+from models.background.spase_background import SpaceBackground
 
 pygame.init()
 pygame.mixer.init()
@@ -27,6 +28,8 @@ settings = Settings(audio)
 sound = SoundManager()
 game_state = "menu"
 
+background = SpaceBackground()
+
 running = True
 while running:
 
@@ -42,20 +45,28 @@ while running:
             if exit_button.collidepoint(event.pos):
                 running = False
 
-        # ✔ важно: сюда же добавляем настройки
+
         settings.handle_event(event)
 
     # mouse
     mouse_pos = pygame.mouse.get_pos()
     in_bass_zone = bass_area.collidepoint(mouse_pos)
 
+    if game_state == "menu":
+        screen.blit(image_bg, bg_rect)
+        settings.draw(screen)
+
+    elif game_state == "game":
+        background.update()
+        background.draw(screen)
+
     sound.update(game_state, in_bass_zone)
 
     # screen
-    screen.blit(image_bg, bg_rect)
+    #screen.blit(image_bg, bg_rect)
 
     # ✔ рисуем настройки
-    settings.draw(screen)
+    #settings.draw(screen)
 
     pygame.display.update()
 
