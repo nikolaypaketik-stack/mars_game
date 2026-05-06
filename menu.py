@@ -1,6 +1,6 @@
 import pygame
 from models.mini_games.audio.sound_manager import SoundManager
-from models.settings import Settings
+from models.mini_games.audio.settings import Settings
 from models.mini_games.audio.audio_manager import AudioManager
 
 pygame.init()
