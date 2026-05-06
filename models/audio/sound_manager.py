@@ -1,6 +1,5 @@
 import pygame
-import models.mini_games.audio.sound_track
-
+import models.audio.sound_track
 class SoundManager:
     def __init__(self):
         self.current_track = None
@@ -30,7 +29,7 @@ class SoundManager:
                 self.switch_track("assets/music/menu.mp3")
 
 
-            if game_state == "game":
+            if game_state == "game_akt_one":
                 self.switch_track("game.mp3")
 
             self.current_state = game_state
