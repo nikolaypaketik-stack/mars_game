@@ -4,13 +4,13 @@ import random
 class SpaceBackground:
     def __init__(self):
         self.images = [
-            pygame.image.load("assets/images/kosmo.bg2.png"),
-            pygame.image.load("assets/images/kosmo.bg3.png"),
-            pygame.image.load("assets/images/kosmo.bg5.png"),
-            pygame.image.load("assets/images/kosmo.bg6.png")
+            pygame.image.load("assets/images/spase_background/kosmo.bg2.png"),
+            pygame.image.load("assets/images/spase_background/kosmo.bg3.png"),
+            pygame.image.load("assets/images/spase_background/kosmo.bg5.png"),
+            pygame.image.load("assets/images/spase_background/kosmo.bg6.png")
         ]
 
-        self.rare_image = pygame.image.load("assets/images/kosmo.bg4.png")
+        self.rare_image = pygame.image.load("assets/images/spase_background/kosmo.bg4.png")
 
         self.current_img = self.images[0]
         self.next_img = self.images[1]

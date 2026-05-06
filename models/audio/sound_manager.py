@@ -26,10 +26,10 @@ class SoundManager:
         if game_state != self.current_state:
 
             if game_state == "menu":
-                self.switch_track("assets/music/menu.mp3")
+                self.switch_track("assets/music/background_music/menu.mp3")
 
 
-            if game_state == "game_akt_one":
+            if game_state == "akt1":
                 self.switch_track("game.mp3")
 
             self.current_state = game_state
@@ -37,9 +37,9 @@ class SoundManager:
         if game_state == "menu":
 
             if in_bass_zone:
-                self.switch_track("assets/music/bass.mp3")
+                self.switch_track("assets/music/instruments/bass.mp3")
             else:
-                self.switch_track("assets/music/menu.mp3")
+                self.switch_track("assets/music/background_music/menu.mp3")
 
             self.in_bass_zone = in_bass_zone
 
