@@ -30,7 +30,7 @@ class SoundManager:
 
 
             if game_state == "akt1":
-                self.switch_track("game.mp3")
+                self.switch_track("assets/music/background_music/kosmoMenu_song_Metro2033.mp3") #akt1 music
 
             self.current_state = game_state
 

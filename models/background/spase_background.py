@@ -18,7 +18,7 @@ class SpaceBackground:
         self.y1 = 0
         self.y2 = -720
 
-        self.speed = 2
+        self.speed = 0.2
 
 
     def update(self):

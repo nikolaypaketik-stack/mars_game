@@ -26,8 +26,8 @@ sound = SoundManager()
 menu = Menu()
 act1 = Akt_one()
 
-current_scene = menu
-game_state = "menu"
+current_scene = act1
+game_state = "akt1"
 
 running = True
 
@@ -46,7 +46,7 @@ while running:
 
         elif result == "exit":
             running = False
-        
+
         settings.handle_event(event)
 
     current_scene.update()
@@ -55,10 +55,11 @@ while running:
 
     sound.update(game_state, in_bass_zone)
 
+    screen.fill((0, 0, 0))
+
     current_scene.draw(screen)
 
     settings.draw(screen)
 
     pygame.display.update()
 
-pygame.quit()
