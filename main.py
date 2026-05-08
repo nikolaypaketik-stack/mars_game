@@ -24,15 +24,18 @@ settings = Settings(audio)
 sound = SoundManager()
 
 menu = Menu()
-act1 = Akt_one()
+act1 = Akt_one(screen)
 
 current_scene = act1
 game_state = "akt1"
 
 running = True
 
-while running:
+clock = pygame.time.Clock()
 
+while running:
+    clock.tick(60)
+    
     for event in pygame.event.get():
 
         if event.type == pygame.QUIT:
@@ -61,5 +64,5 @@ while running:
 
     settings.draw(screen)
 
-    pygame.display.update()
+    pygame.display.flip()
 

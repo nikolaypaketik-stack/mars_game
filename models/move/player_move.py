@@ -2,13 +2,13 @@ import pygame
 
 class PlayerMove:
 
-    def __init__(self):
-        self.speed = 1.2
-        self.rect = pygame.Rect(100, 100, 50, 50)
+    def __init__(self, screen):
+        self.speed = 2
 
-        #self.image = pygame.image.load("assets/images/ship/spaseship1.1.png").convert_alpha()
-        #self.image = pygame.transform.scale(self.image, (120, 120))
-        #self.rect = self.image.get_rect(center=(640, 360))
+        self.rect = pygame.Rect(0, 0, 50, 50)
+
+        # FIX: используем screen только один раз, без хранения зависимости
+        self.rect.center = screen.get_rect().center
 
     def update(self):
         keys = pygame.key.get_pressed()
@@ -24,4 +24,3 @@ class PlayerMove:
 
     def draw(self, screen):
         pygame.draw.rect(screen, (255, 255, 255), self.rect)
-        #screen.blit(self.image, self.rect)
