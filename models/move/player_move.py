@@ -9,6 +9,9 @@ class PlayerMove:
 
         # FIX: используем screen только один раз, без хранения зависимости
         self.rect.center = screen.get_rect().center
+        self.history = []
+
+        
 
     def update(self):
         keys = pygame.key.get_pressed()
@@ -21,6 +24,9 @@ class PlayerMove:
             self.rect.x -= self.speed
         if keys[pygame.K_d]:
             self.rect.x += self.speed
+        self.history.append((self.rect.x, self.rect.y))
+        if self.rect.left < 0:
+            self.rect.left = 0
 
     def draw(self, screen):
         pygame.draw.rect(screen, (255, 255, 255), self.rect)

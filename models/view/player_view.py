@@ -1,12 +1,14 @@
 import pygame 
 from models.move.player_move import PlayerMove
+from models.phase.phase import Phase 
 
 
 class PlayerView:
     def __init__(self, screen, player_move):
         self.screen = screen
         self.player_move = player_move
-        self.phase = 1
+        self.phase = Phase
+        
 
 
         self.img_normal = pygame.image.load(
@@ -22,6 +24,7 @@ class PlayerView:
 
         self.angle = 0
         self.thrust = False
+        
         
 
     def handle_input(self):

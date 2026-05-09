@@ -3,6 +3,9 @@ from models.background.spase_background import SpaceBackground
 from models.move.player_move import PlayerMove
 from models.complications_for_the_player.meteor_manager import MeteorManager
 from models.view.player_view import PlayerView
+from models.phase.phase import Phase 
+from models.move.boss_move import BossMove
+from models.view.boss_view import BossView
 
 
 class Akt_one:
@@ -18,6 +21,9 @@ class Akt_one:
         self.meteor_manager = MeteorManager()
         self.meteor_manager.spawn()
 
+        self.boss_move = BossMove(self.player_move)
+        self.boss_view = BossView(screen, self.boss_move)
+
     def handle_event(self, event):
         pass
 
@@ -26,9 +32,12 @@ class Akt_one:
         self.player_move.update()
         self.player_view.update()
         self.meteor_manager.update()
+        self.boss_move.update()
+        self.boss_view.update()
 
     def draw(self, screen):
         self.bg.draw(screen)
         self.meteor_manager.draw(screen)
 
+        self.boss_view.draw()
         self.player_view.draw()
