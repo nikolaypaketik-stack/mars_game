@@ -1,10 +1,10 @@
 import pygame
-from models.audio.sound_manager import SoundManager
+from managers.audio.sound_manager import SoundManager
 from models.audio.settings import Settings
-from models.audio.audio_manager import AudioManager
+from managers.audio.audio_manager import AudioManager
 from models.background.spase_background import SpaceBackground
-from models.akt_manager.menu import Menu
-from models.akt_manager.akt_one import Akt_one
+from managers.akt_manager.menu import Menu
+from managers.akt_manager.akt_one import Akt_one
 
 pygame.init()
 pygame.mixer.init()
