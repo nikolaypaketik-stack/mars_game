@@ -26,8 +26,8 @@ sound = SoundManager()
 menu = Menu()
 act1 = Akt_one(screen)
 
-current_scene = act1
-game_state = "akt1"
+current_scene = menu
+game_state = "menu"
 
 running = True
 
