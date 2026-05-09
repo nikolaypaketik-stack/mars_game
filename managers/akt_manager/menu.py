@@ -6,7 +6,7 @@ class Menu:
         self.image = pygame.image.load("assets/images/menu/menu1.png").convert_alpha()
         self.bg_rect = self.image.get_rect(center=(640, 360))
 
-        self.start_button = pygame.Rect(340, 320, 200, 60)
+        self.start_button = pygame.Rect(340, 120, 200, 60)
         self.participants_button = pygame.Rect(340, 480, 200, 60)
         self.exit_button_in_menu = pygame.Rect(340, 640, 200, 60)
 
