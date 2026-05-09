@@ -1,7 +1,7 @@
 import pygame
 from models.background.spase_background import SpaceBackground
 from models.move.player_move import PlayerMove
-from models.complications_for_the_player.meteor_manager import MeteorManager
+from managers.complications_for_the_player.meteor_manager import MeteorManager
 from models.view.player_view import PlayerView
 from models.phase.phase import Phase 
 from models.move.boss_move import BossMove

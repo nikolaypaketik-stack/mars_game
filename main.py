@@ -1,6 +1,6 @@
 import pygame
 from managers.audio.sound_manager import SoundManager
-from models.audio.settings import Settings
+from models.audio.settings import AudioSettings
 from managers.audio.audio_manager import AudioManager
 from models.background.spase_background import SpaceBackground
 from managers.akt_manager.menu import Menu
@@ -9,9 +9,6 @@ from managers.akt_manager.akt_one import Akt_one
 pygame.init()
 pygame.mixer.init()
 
-audio = AudioManager()
-settings = Settings(audio)
-
 screen = pygame.display.set_mode((1280, 720))
 
 
@@ -19,15 +16,15 @@ pygame.init()
 pygame.mixer.init()
 
 audio = AudioManager()
-settings = Settings(audio)
+settings = AudioSettings(audio)
 
 sound = SoundManager()
 
 menu = Menu()
 act1 = Akt_one(screen)
 
-current_scene = act1
-game_state = "akt1"
+current_scene = menu
+game_state = "menu"
 
 running = True
 

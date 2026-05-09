@@ -1,6 +1,6 @@
 import pygame
 
-class Settings:
+class AudioSettings:
     def __init__(self, audio):
         self.audio = audio
 
