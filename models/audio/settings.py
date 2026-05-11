@@ -17,11 +17,11 @@ class AudioSettings:
             if pygame.mouse.get_pressed()[0]:
                 if self.volume_bar.collidepoint(event.pos):
 
-                    # переводим позицию мыши в громкость (0 → 1)
+                    
                     self.volume = (event.pos[0] - self.start_x) / self.width
                     self.volume = max(0.0, min(1.0, self.volume))
 
-                    # применяем громкость к музыке
+                   
                     self.audio.set_music_volume(self.volume)
 
     def draw(self, screen):
